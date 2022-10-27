@@ -1,0 +1,135 @@
+
+
+#include <olectl.h>
+#include <idispids.h>
+[ uuid(BAD43083-3C24-4210-9593-5DBA55E7A366), version(1.0),
+  control ]
+library JbuVideoPlayerLib
+{
+	importlib(STDOLE_TLB);
+
+	
+	[ 
+		uuid(855D40DF-C6CF-4970-B0A9-35D4C45B7FA7)	
+	]
+	dispinterface _DJbuVideoPlayer
+	{
+		properties:
+			[id(43) ] LONG TemplateID;
+			[id(44) ] BSTR GraphPath;
+	methods:
+
+			[id(1)] LONG OpenVideo(BSTR bstrFileName);
+			[id(2)] LONG SetGraphPath(BSTR bstrPath);
+			[id(3)] SHORT HasVideo(void);
+			[id(4)] LONG Play(void);
+			[id(5)] LONG Stop(void);
+			[id(6)] LONG Pause(void);
+			[id(7)] LONG SetRate(DOUBLE dRate);
+			[id(8)] LONG StepFwd(void); 
+			[id(9)] LONG StepRew(void);
+			[id(10)] LONG SecondFwd(LONG nSecond);
+			[id(11)] LONG SecondRew(LONG nSecond);
+			[id(12)] LONG SetVolume(LONG dAmount);
+			[id(13)] LONG FullScreen(SHORT nState);
+			[id(14)] BSTR GetCurPosTcString(void);
+			[id(15)] LONG GetCurPosByFrame(void);
+			[id(16)] LONGLONG GetCurPosByMSec(void);
+			[id(17)] LONG GetStatus(void);
+			[id(18)] LONG GetVideoWidth(void);
+			[id(19)] LONG GetVideoHeight(void);
+			[id(20)] DOUBLE GetVideoFps(void);
+			[id(21)] LONG GetLengthByFrame(void);
+			[id(22)] LONGLONG GetLengthByMSec(void);
+			[id(23)] LONG SetInPoint(LONG nPos);
+			[id(24)] LONG SetOutPoint(LONG nPos);
+			[id(25)] LONG SetSegment(void);
+			[id(26)] LONG Mute(LONG bMute);
+			[id(27)] DOUBLE GetVolume(void);
+			[id(28)] SHORT IsMute(void);
+			[id(29)] LONG SnapShot(BSTR bstrImageName);
+			[id(30)] DOUBLE GetVuMeter(SHORT nChannel);
+			[id(31)] LONG GetSegmentCount(void);
+			[id(32)] LONG SetDefaultSegment(LONG nSegmentID);
+			[id(33)] LONG GetInPointByFrame(LONG nSegmentID);
+			[id(34)] LONG Open();
+			[id(35)] LONG GetOutPointByFrame(LONG nSegmentID);
+			[id(36)] BSTR GetInTcCode(LONG nSegmentID);
+			[id(37)] BSTR GetOutTcCode(LONG nSegmentID);
+			[id(38)] LONG PlaySegment(LONG nSegmentID);
+			//[id(39)] LONG SetTemplateID(LONG nID);
+			[id(40)] SHORT SetPositionByFrame(LONG nBeginFrame, LONG nEndFrame);
+			[id(41)] SHORT SetPositionByMs(LONGLONG nStartTime, LONGLONG nStopTime);
+			[id(42)] BSTR GetVideoName(void);
+			[id(45)] LONG GetFaceRect(LONG* left, LONG* top, LONG* right, LONG* bottom);
+			[id(46)] LONG GetFaceWidth(LONG* nWidth);
+			[id(47)] LONG GetFaceHeight(LONG* nHeight);
+			[id(48)] LONG GetLEyeRect(LONG* left, LONG* top, LONG* right, LONG* bottom);
+			[id(49)] LONG GetREyeRect(LONG* left, LONG* top, LONG* right, LONG* bottom);
+			[id(50)] LONG GetREyeballRect(LONG* left, LONG* top, LONG* right, LONG* bottom);
+			[id(51)] LONG GetLEyeballRect(LONG* left, LONG* top, LONG* right, LONG* bottom);
+			[id(52)] LONG GetFaceImg(BYTE* pImage, LONG nSize);
+			[id(53)] LONG GetLEyeImg(BYTE* pImage, LONG nSize);
+			[id(54)] LONG GetREyeImg(BYTE* pImage, LONG nSize);
+			[id(55)] LONG GetLEyeballImg(BYTE* pImage, LONG nSize);
+			[id(56)] LONG GetREyeballImg(BYTE* pImage, LONG nSize);
+			[id(57)] LONG GetLeadFace(BYTE* pLeadFace);
+			[id(58)] LONG GetActivativedValue(DOUBLE* dActivation);
+			[id(59)] LONG GetBlinkCount(void);
+			[id(60)] LONG GetCurTimeMs(void);
+			[id(61)] LONGLONG GetCurTime(void);
+			[id(62)] SHORT ResetCounter(void);
+			[id(63)] SHORT SetCheck(SHORT nCheck);
+			[id(64)] SHORT GetCheck(void);
+			[id(65)] SHORT SetFaceRectLineWidth(FLOAT fLineWidth);
+			[id(66)] LONG GetFaceRectLineWidth(FLOAT* fLineWidth);
+			[id(67)] SHORT SetEyeRectLineWidth(FLOAT fLineWidth);
+			[id(68)] LONG GetEyeRectLineWidth(FLOAT* fLineWidth);
+			[id(69)] SHORT GetEvent(LONG* evCode, LONG* L1, LONG* L2);
+			[id(77)] LONG DeleteSegment(LONG nSegmentID);
+			[id(78)] SHORT SetOverlayImgPosition(BSTR szImgName, LONG nLeft, LONG nTop, LONG nRight, LONG nBottom, SHORT bDisplay, SHORT bScaleFit, LONG nTranspency);
+			[id(79)] SHORT SetOverlayFontName(LONG nID, BSTR szFontName);
+			[id(80)] SHORT DisplayOverlay(LONG nID, SHORT bIsDisplay);
+			[id(81)] SHORT SetOverlayPosition(LONG nID, LONG nLeft, LONG nTop, LONG nRight, LONG nBottom);
+			[id(82)] SHORT SetOverlayColor(LONG nID, OLE_COLOR nColor);
+			[id(83)] SHORT SetOverlayFontSize(LONG nID, LONG nFontSize);
+			[id(84)] SHORT SetOverlayFont(LONG nID, LONG nFontStyle, SHORT bUnderLine, SHORT bWrap, SHORT bVertical, SHORT bRightAlign);
+			[id(85)] SHORT SetOverlayText(LONG nID, BSTR szText);
+			[id(86)] SHORT GetCountOfArray(void);
+			[id(87)] void Free(void);
+			[id(88)] SHORT SetCurrentPositionByFrame(LONGLONG nCurrentFrame);
+			[id(89)] DOUBLE GetFps(void);
+			[id(90)] void SetFps(DOUBLE dFps);
+			[id(91)] LONG OpenVideo1(BSTR VideoName, LONG GraphID);
+			[id(92)] SHORT GetVideoEvent(void);
+			[id(93)] SHORT SetSelect(SHORT bSelected);
+			[id(94)] SHORT SetEmbedded(SHORT bEmbedded);
+			[id(95)] SHORT IsEmbedded(void);
+			[id(96)] SHORT IsSelected(void);
+			[id(97)] void SetParentLong(LONG Parent);
+	};
+
+	
+
+	[ 
+		uuid(827254BE-C48B-4E39-BC60-8E9DCD13E544)	
+	]
+	dispinterface _DJbuVideoPlayerEvents
+	{
+		properties:
+		
+
+		methods:
+	};
+
+
+	[
+		uuid(C1AA0568-B4D4-4E0E-AE6E-1081E8756FCF)
+	]
+	coclass JbuVideoPlayer
+	{
+		[default] dispinterface _DJbuVideoPlayer;
+		[default, source] dispinterface _DJbuVideoPlayerEvents;
+	};
+
+};

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JbuVideoPlayer", "JbuVideoPlayer\JbuVideoPlayer.vcxproj", "{BE37A272-5E73-4108-8352-DB893863E09E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项目", "解决方案项目", "{4424A3B7-2270-4162-9A15-DE0832275794}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\青鸟\videoplayer\JbuVideoPlayer.vsd = ..\..\..\青鸟\videoplayer\JbuVideoPlayer.vsd
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE37A272-5E73-4108-8352-DB893863E09E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BE37A272-5E73-4108-8352-DB893863E09E}.Debug|Win32.Build.0 = Debug|Win32
+		{BE37A272-5E73-4108-8352-DB893863E09E}.Release|Win32.ActiveCfg = Release|Win32
+		{BE37A272-5E73-4108-8352-DB893863E09E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
